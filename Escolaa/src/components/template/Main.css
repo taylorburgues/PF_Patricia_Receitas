@@ -1,0 +1,12 @@
+div.content{
+    width: 80%;
+    height: 80%;
+    margin:auto;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "LucidaSans", Arial, sans-serif;
+    }
+main > div {
+    background-color: rgb(227, 174, 136);
+    box-shadow: rgba(236, 106, 6, 0.35) 0px 5px 15px;
+    padding: 20px;
+}
