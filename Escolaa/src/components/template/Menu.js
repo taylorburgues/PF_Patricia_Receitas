@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom';
 export default function Menu(props) {
     return (
         <nav className='menu'>
-            <Link to="/alunos">
-                Alunos
+            <Link to="/">
+                Home
             </Link>
-            <Link to="/cursos">
-                Cursos
+
+            <Link to="/receitas">
+                Receitas
             </Link>
-            <Link to="/carometro">
-                Carômetro
+
+            <Link to="/login">
+                Login
             </Link>
         </nav>
     )

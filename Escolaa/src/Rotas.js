@@ -1,27 +1,20 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import Main from './components/template/Main';
-import CrudAluno from './components/CrudAluno/CrudAluno';
-import CrudCurso from './components/CrudCurso/CrudCurso';
-import Carometro from './components/Carometro/Carometro';
+import Login from './components/Login/Login'
+import CrudReceitas from './components/CrudReceitas/Receitas'
+import Home from './components/Home/Home'
 
 
 export default function Rotas() {
     return (
         <Routes>
             <Route exact path='/'
-                element={
-                    <Main title="Bem Vindo!">
-                        <div>Cadastro de alunos, cursos e carômetro</div>
-                    </Main>}
+                element=
+                    {<Home />}
             />
-            <Route path='/alunos' element={<CrudAluno />} />
-            
-            <Route path='/cursos' element={<CrudCurso />} />
-            
-            <Route exact path='/'/>
-            <Route path='/carometro' element={<Carometro />} />
-            <Route path="*" to='/' />
+            <Route path='/receitas' element={<CrudReceitas />} />
+            <Route path='/login' element={<Login />} />
         </Routes>
     )
 }

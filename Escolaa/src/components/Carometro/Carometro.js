@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//import './Carometro.css';
 
 const Carometro = () => {
     const urlApiAlunos = "http://localhost:5046/api/aluno"
@@ -9,7 +8,6 @@ const Carometro = () => {
     const [listaFiltrada, setListaFiltrada] = useState([])
     const [listaDeCursos, setListaCursos] = useState([])
     const [dataAtualizada, setDataAtualizada] = useState(true)
-
     const avatar = ['micah',]
 
     const ramdomAvatar = () => {
@@ -18,7 +16,6 @@ const Carometro = () => {
         let rd = avatar[av]
         return rd
     }
-
 
     const getRandomLetter = () => {
         return Math.random().toString(36).substring(2, 9);
@@ -56,7 +53,6 @@ const Carometro = () => {
         console.log(lista)
     }
 
-
     return (
         <div>
             <select name="codCurso" onChange={e => { getListaAtualizada(e) }}>
@@ -73,7 +69,6 @@ const Carometro = () => {
                 )}
             </select>
             <div className="text-center duration-75 rounded-lg">
-
                 <div className="flex flex-wrap gap-5 w-screen items-center justify-between py-10 px-60 rounded-lg">
                     {listaFiltrada.map((datas) => {
                         return (
@@ -96,7 +91,6 @@ const Carometro = () => {
                     })}
                 </div>
             </div>
-
         </div>
     )
 }

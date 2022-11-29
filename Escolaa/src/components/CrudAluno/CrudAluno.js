@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import axios from 'axios';
 import './CrudAluno.css';
@@ -10,10 +11,13 @@ const initialState = {
     aluno: { id: 0, ra: '', nome: '', codCurso: 0 },
     lista: []
 }
+
 const cursourlAPI = "http://localhost:5046/api/curso";
-const cursoinitialState = {
+const cursoinitialState = { 
     curso: { id: 0, codCurso: 0, nomeCurso: '', periodo: '' },
-    cursoLista: []
+    cursoLista: [
+        
+    ]
 }
 
 
@@ -116,7 +120,7 @@ export default class CrudAluno extends Component {
 
                     value={this.state.aluno.codCurso}
                     onChange={e => this.atualizaCampo(e)}
-        /> */}
+        /> } //
 
                 <select name="codCurso" onChange={e => { this.atualizaCurso(e)}}>
                     {this.state.cursoLista.map(
@@ -187,3 +191,4 @@ export default class CrudAluno extends Component {
         )
     }
 }
+*/
