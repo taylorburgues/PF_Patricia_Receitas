@@ -16,11 +16,11 @@ const Carometro = () => {
         let rd = avatar[av]
         return rd
     }
-
+/*
     const getRandomLetter = () => {
         return Math.random().toString(36).substring(2, 9);
     }
-
+*/
     const pegarInformacoesDaApi = async () => {
         await axios(urlApiAlunos)
             .then(resp => {
@@ -67,6 +67,7 @@ const Carometro = () => {
                             {curso.periodo}
                         </option>
                 )}
+
             </select>
             <div className="text-center duration-75 rounded-lg">
                 <div className="flex flex-wrap gap-5 w-screen items-center justify-between py-10 px-60 rounded-lg">
@@ -94,4 +95,5 @@ const Carometro = () => {
         </div>
     )
 }
+
 export default Carometro

@@ -16,5 +16,5 @@ export default function Rotas() {
             <Route path='/receitas' element={<CrudReceitas />} />
             <Route path='/login' element={<Login />} />
         </Routes>
-    )
+    ) 
 }

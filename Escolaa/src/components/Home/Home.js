@@ -182,9 +182,11 @@ import axios from 'axios';
 import './Home.css';
 import Main from '../template/Main';
 
-const title = "Cadastro de Cursos!";
 
-const urlAPI = "http://localhost:5046/api/curso";
+const title = "Cadastro de Receitas!";
+
+const urlAPI = "http://localhost:5209/api/receita";
+
 const initialState = {
     receita: { id: 0, nome: '', ingredientes: '', preparo: '' },
     lista: []
@@ -193,24 +195,26 @@ const initialState = {
 
 export default function CrudCurso( ) {
     const [receita, setReceita] = useState(initialState.receita)
-    const [lista, setLista] = useState(initialState.lista) 
+    const [lista, setLista] = useState(initialState.lista)
+    
     useEffect(() => {
         axios(urlAPI).then(resp => {
             setLista( resp.data)
         })
     })
+
     const limpar =() =>{
         setReceita({ receita: initialState.receita });
     }
-    const salvar =() => {
-        
+
+    const salvar =() => { 
         const metodo = receita.id ? 'put' : 'post';
         const url = receita.id ? `${urlAPI}/${receita.id}` : urlAPI;
             axios[metodo](url, receita)
         .then(resp => {
             const lista = getListaAtualizada(resp.data)
             setReceita({ receita: initialState.receita, lista })
-
+            window.location.href = "http://localhost:3000/receitas/"
         })
     }
     const getListaAtualizada =(receita, add = true)=>{
@@ -251,14 +255,14 @@ export default function CrudCurso( ) {
                     value={receita.nome}
                     onChange={e => atualizaCampo(e)}
                 />
-                <label> Nome dos Ingredientes: </label>
+                <label> Ingredientes: </label>
                 <input
                     type="text"
                     id="ingrediente"
                     placeholder="Nome do ingrediente"
                     className="form-input"
-                    name="ingrediente"
-                    value={receita.ingrediente}
+                    name="ingredientes"
+                    value={receita.ingredientes}
                     onChange={e => atualizaCampo(e)}
                 />
                 <label> Modo de Preparo: </label>
@@ -282,31 +286,30 @@ export default function CrudCurso( ) {
             </div>
         )
     }
+    
     const renderTable =()=> {
         return (
             <div className="listagem">
                 <table className="listaCurso" id="tblListaCurso">
                     <thead>
                         <tr className="cabecTabela">
-                            <th className="tabTituloCodigo">Codigo</th>
-                            <th className="tabTituloNome">Nome do curso</th>
-                            <th className="tabTituloPeriodo">Periodo</th>
+                            <th className="tabTituloNome">Nome</th>
+                            <th className="tabTituloNome">Alterar</th>
+                            <th className="tabTituloNome">Remover</th>
                         </tr>
                     </thead>
                     <tbody>
                         {lista.map(
-                            (curso) =>
-                                <tr key={curso.id}>
-                                    <td>{curso.codCurso}</td>
-                                    <td>{curso.nomeCurso}</td>
-                                    <td>{curso.periodo}</td>
-                                    <td>
-                                        <button onClick={() => carregar(curso)} >
-                                            Altera
+                            (receita) =>
+                                <tr key={receita.id}>
+                                    <td>{receita.nome}</td>
+                                    <td> 
+                                        <button onClick={() => carregar(receita)} >  
+                                            Alterar
                                         </button>
                                     </td>
                                     <td>
-                                        <button onClick={() => remover(curso)} >
+                                        <button onClick={() => remover(receita)} >
                                             Remove
                                         </button>
                                     </td>
@@ -317,10 +320,12 @@ export default function CrudCurso( ) {
             </div>
         )
     }
+    
         return (
             <Main title={title}>
                 {renderForm()}
                 {renderTable()}
             </Main>
         )
+
 }
