@@ -1,3 +1,4 @@
+/*
 :root {
   --bg-menu: #bdbbbb;
   --logo-width: 150px;
@@ -7,7 +8,7 @@
 
 body{
   box-sizing: border-box;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .App {
@@ -34,4 +35,57 @@ div.content {
 
 footer.footer {
   grid-area: footer;
+}*/
+
+:root {
+  --bg-menu: rgb(fff);
+  --logo-width: 150px;
+  --content-header-height: 60px;
+  --content-footer-height: 40px;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Pacifico", sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Lay-out */
+.App {
+  margin: 0px;
+  display: grid;
+  grid-template-columns: var(--logo-width) 1fr;
+  grid-template-rows: var(--content-header-height) 1fr var(
+          --content-footer-height
+      );
+  grid-template-areas:
+      "logo menu"
+      "content content"
+      "footer footer";
+  background-color: #e6dfdf;
+  background-image: url('../src/assets/frutas.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+aside.logo {
+  grid-area: logo;
+}
+
+nav.menu {
+  grid-area: menu;
+}
+
+div.content {
+  grid-area: content;
+}
+
+footer.footer {
+  grid-area: footer;
+}
+
+html,
+body {
+    height: 100%;
 }

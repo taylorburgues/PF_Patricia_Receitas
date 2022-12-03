@@ -193,7 +193,7 @@ const initialState = {
 }
 
 
-export default function CrudCurso( ) {
+export default function CrudCurso() {
     const [receita, setReceita] = useState(initialState.receita)
     const [lista, setLista] = useState(initialState.lista)
     
@@ -259,7 +259,7 @@ export default function CrudCurso( ) {
                 <input
                     type="text"
                     id="ingrediente"
-                    placeholder="Nome do ingrediente"
+                    placeholder="Ingredientes"
                     className="form-input"
                     name="ingredientes"
                     value={receita.ingredientes}

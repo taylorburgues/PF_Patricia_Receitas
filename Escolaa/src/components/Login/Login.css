@@ -17,16 +17,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background: rgba(30,29,31,1);
-background: -moz-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(30,29,31,1)), color-stop(100%, rgba(223,64,90,1)));
-background: -webkit-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-background: linear-gradient(135deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1d1f', endColorstr='#df405a', GradientType=1 );
-}
 
 /*--------------------
 Text
@@ -331,18 +321,19 @@ input[type=submit]  {
   font-family: 'Quicksand', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
-	color: #fff;
+	color: rgb(0, 0, 0);
   line-height: 40px;
   text-align: center;
-  background-color: #87314e;
-	border: 1px #87314e solid;
+  background-color: #eeedee;
+	border: 1px #e1e1e1 solid;
 	opacity: 1;
 	cursor: pointer;
 }
 
 input[type=submit]:hover {
-	background-color: #df405a;
-  border: 1px #df405a solid;
+  color: white;
+	background-color: #4080df;
+  border: 1px #1eb2db solid;
 }
 
 input[type=submit]:focus {

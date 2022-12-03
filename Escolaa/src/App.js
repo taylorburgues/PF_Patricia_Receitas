@@ -14,7 +14,6 @@ function App() {
       <Logo />
       <Menu />
       <Rotas />
-      <Footer />
     </div>
     </BrowserRouter>
   );

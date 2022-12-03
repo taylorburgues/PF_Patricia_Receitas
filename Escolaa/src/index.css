@@ -1,3 +1,4 @@
+/*
 :root {
   --bg-menu: #bdbbbb;
   }
@@ -5,3 +6,19 @@
   box-sizing: border-box;
   font-family: "Pacifico", sans-serif;
   }
+*/
+
+:root {
+  --bg-menu: #171420;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Pacifico", sans-serif;
+}

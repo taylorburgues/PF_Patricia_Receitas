@@ -13,7 +13,7 @@ function Login() {
             <div class='fieldset-body' id='login_form'>
               <button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button>
               <p class='field'>
-                <label for='user'>E-MAIL</label>
+                <label for='user'>NOME</label>
                 <input type='text' id='user' name='user' title='Username' />
                 <span id='valida' class='i i-warning'></span>
               </p>
@@ -27,18 +27,18 @@ function Login() {
                 <input type='checkbox' value='TRUE' title='Continuar logado' /> Continuar Logado
               </label>
 
-              <input type='submit' id='do_login' value='GET STARTED' title='Get Started' />
+              <input type='submit' id='do_login' value='Fazer login' title='logar' />
             </div>
           </div>
         </div>
         <div class='box-info'>
-          <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Need Help?</h3>
+          <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Precisa de ajuda?</h3>
           </p>
           <div class='line-wh'></div>
-          <button onclick="" class='b-support' title='Forgot Password?'> Forgot Password?</button>
-          <button onclick="" class='b-support' title='Contact Support'> Contact Support</button>
+          <button onclick="" class='b-support' title='esqueceu a senha?'> Esqueceu a senha?</button>
+          <button onclick="" class='b-support' title='fale conosco'> Fale conosco</button>
           <div class='line-wh'></div>
-          <button onclick="" class='b-cta' title='Sign up now!'> CREATE ACCOUNT</button>
+          <button onclick="" class='b-cta' title='registro'> Criar conta</button>
         </div>
       </div>
 

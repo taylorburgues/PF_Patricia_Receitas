@@ -21,7 +21,7 @@ export default function CrudReceitas( ) {
             console.log(resp.data)
         })
     })
-
+/*
     const limpar =() =>{
         setReceita({ receita: initialState.receita });
     }
@@ -65,7 +65,7 @@ export default function CrudReceitas( ) {
                 })
         }
     }
-/*
+
 const Receitas = () => {
     const [lista, setLista] = useState(initialState.lista)
     useEffect(() => {
