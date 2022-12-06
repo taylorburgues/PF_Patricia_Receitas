@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Main from './components/template/Main';
 import CrudReceitas from './components/CrudReceitas/Receitas'
-import AuthService from './components/services/AuthService';
+import AuthService from '../src/services/AuthService';
 import Home from './components/Home/Home'
 import Login from './components/Login/Login'
 import Logout from './components/Logout/Logout';

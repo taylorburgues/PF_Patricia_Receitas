@@ -20,25 +20,27 @@ html {
 .formLogin {
   margin: auto;
   margin-top: 50px;
-  width: 400px;
+  width: 450px;
   border-radius: 5px;
   background-color: #faf3f3;
   padding: 25px;
   display: block;
   }
+
   .tituloAuth {
   text-align: center;
   }
   
   .lblLogin {
   padding: 10px;
-  width: 100px;
+  width: 100%;
   display: inline-block;
   }
 
   .inputAuth {
   padding: 12px;
-  margin: 8px 0;
+  margin: 8px 38px;
+  width: 80%;
   }
 
   button[type=submit] {

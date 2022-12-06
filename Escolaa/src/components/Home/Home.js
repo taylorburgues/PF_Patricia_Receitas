@@ -14,8 +14,9 @@ const initialState = {
     lista: []
 }
 
+const user = JSON.parse(localStorage.getItem("user"));
 
-export default function CrudCurso() {
+export default function Home() {
     const [receita, setReceita] = useState(initialState.receita)
     const [lista, setLista] = useState(initialState.lista)
     
@@ -23,6 +24,27 @@ export default function CrudCurso() {
         axios(urlAPI).then(resp => {
             setLista( resp.data)
         })
+    })
+
+    const componentDidMount =(() => {
+        /*axios(urlAPI).then(resp => {
+        //console.log(resp.data)
+        this.setState({ lista_aluno: resp.data });
+        })*/
+        axios(urlAPI, { headers: { Authorization: 'Bearer ' + user.token } })
+        .then(resp => {
+                this.setState( { lista_aluno: resp.data } );
+            },
+            (error) => {
+                const _mens =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                    this.setState( { mens: _mens });
+            }
+        );
     })
 
     const limpar =() =>{
@@ -145,8 +167,10 @@ export default function CrudCurso() {
     
         return (
             <Main title={title}>
-                {renderForm()}
-                {renderTable()}
+                {(this.mens) ? 
+                    "Erro" + this.mens :
+                    renderForm() ||
+                    renderTable()}
             </Main>
         )
 
