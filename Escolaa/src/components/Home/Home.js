@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
 import Main from '../template/Main';
+import UserService from '../../services/UserService.js';
 
 
 const title = "Cadastro de Receitas!";
@@ -11,7 +12,8 @@ const urlAPI = "http://localhost:5209/api/receita";
 
 const initialState = {
     receita: { id: 0, nome: '', ingredientes: '', preparo: '' },
-    lista: []
+    lista: [],
+    mens: [],
 }
 
 const user = JSON.parse(localStorage.getItem("user"));
@@ -19,33 +21,27 @@ const user = JSON.parse(localStorage.getItem("user"));
 export default function Home() {
     const [receita, setReceita] = useState(initialState.receita)
     const [lista, setLista] = useState(initialState.lista)
+    const [mens, setMens] = useState([]);
     
     useEffect(() => {
-        axios(urlAPI).then(resp => {
-            setLista( resp.data)
+        UserService.getChefBoardReceita().then(
+            (response) => {
+            console.log("useEffect getChefBoardReceita: " + response.data)
+            setLista(response.data);
+            setMens(null);
         })
-    })
+        
+    }, []);
 
+    /*
     const componentDidMount =(() => {
-        /*axios(urlAPI).then(resp => {
+        axios(urlAPI).then(resp => {
         //console.log(resp.data)
         this.setState({ lista_aluno: resp.data });
-        })*/
-        axios(urlAPI, { headers: { Authorization: 'Bearer ' + user.token } })
-        .then(resp => {
-                this.setState( { lista_aluno: resp.data } );
-            },
-            (error) => {
-                const _mens =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-                    this.setState( { mens: _mens });
-            }
-        );
-    })
+        })/
+
+
+    }) */
 
     const limpar =() =>{
         setReceita({ receita: initialState.receita });
@@ -167,10 +163,13 @@ export default function Home() {
     
         return (
             <Main title={title}>
-                {(this.mens) ? 
-                    "Erro" + this.mens :
-                    renderForm() ||
-                    renderTable()}
+                {(mens) ? 
+                    "Erro" + mens :
+                        <>
+                        {renderForm()}
+                        {renderTable()}
+                    </>
+                }
             </Main>
         )
 

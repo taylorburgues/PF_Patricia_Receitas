@@ -93,7 +93,7 @@ const Receitas = () => {
                                     <td>{receita.nome}</td>
                                     <td>{receita.ingredientes}</td>
                                     <td>{receita.preparo}</td>
-                                    
+
                                 </tr>
                         )}
                     </tbody>
